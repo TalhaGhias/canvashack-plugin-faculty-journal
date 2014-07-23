@@ -1,9 +1,9 @@
 <?php
 
-require_once(__DIR__ . '/../config.inc.php');
+require_once(__DIR__ . '/smcanvaslib/config.inc.php');
 require_once(__DIR__ . '/.ignore.faculty-journal-authentication.inc.php');
 require_once(__DIR__ . '/config.inc.php');
-require_once(APP_PATH . '/include/canvas-api.inc.php');
+require_once(SMCANVASLIB_PATH . '/include/canvas-api.inc.php');
 
 ?>
 <html>
