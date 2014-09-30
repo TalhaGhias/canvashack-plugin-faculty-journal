@@ -70,7 +70,7 @@ function stmarks_globalJavascript() {
 	// http://stackoverflow.com/a/950146
 
 	$.getScript(
-		pathToScripts + 'faculty-journal.js',
+		pathToScripts + 'faculty-journal.php',
 		function() {
 			stmarks_facultyJournal();
 		}

@@ -1,3 +1,8 @@
+<?php
+
+header('Content-Type: application/javascript');
+
+?>
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true */
 
 var courseUsersUrl = /.*\/courses\/(\d+)\/users/;
@@ -29,7 +34,7 @@ function stmarks_addFacultyJournalMenu() {
 		courseMenu.width = '100%';
 		courseMenu.height = '30';
 		courseMenu.frameBorder = '0';
-		courseMenu.src = 'https://stmarksschool-area51-secure.azurewebsites.net//api/faculty-journal/menu.php?course_id=' + courseId + '&user_id=' + userId;
+		courseMenu.src = '<?= 'https://' . $_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']) ?>/menu.php?course_id=' + courseId + '&user_id=' + userId;
 		contentDiv.insertBefore(courseMenu, contentDiv.firstChild);
 	// if the content area isn't ready yet, try again soon
 	} else {
@@ -48,3 +53,5 @@ function stmarks_facultyJournal() {
 		stmarks_addFacultyJournalButton();
 	}
 }
+
+stmarks_facultyJournal();
