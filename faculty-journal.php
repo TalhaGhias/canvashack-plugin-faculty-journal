@@ -53,5 +53,3 @@ function stmarks_facultyJournal() {
 		stmarks_addFacultyJournalButton();
 	}
 }
-
-stmarks_facultyJournal();
