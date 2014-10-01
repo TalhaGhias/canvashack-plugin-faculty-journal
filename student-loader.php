@@ -14,7 +14,7 @@
 	
 	$acceptableCache = date('Y-m-d H:i:s',time() - CACHE_DURATION);
 	$menuCacheResponse = mysqlQuery("
-		SELECT * FROM `menus`
+		SELECT * FROM `cache-faculty-journal-menus`
 			WHERE
 				`course_id` = '{$_REQUEST['course_id']}' AND
 				`cached` > '$acceptableCache'
@@ -25,7 +25,7 @@
 		$menu = unserialize($menuCache['menu']);
 	} else {
 		mysqlQuery("
-			DELETE FROM `menus`
+			DELETE FROM `cache-faculty-journal-menus`
 				WHERE
 					`course_id` = '{$_REQUEST['course_id']}'
 		");
@@ -54,7 +54,7 @@
 			}
 		}
 		mysqlQuery("
-			INSERT INTO `menus`
+			INSERT INTO `cache-faculty-journal-menus`
 			(
 				`course_id`,
 				`menu`

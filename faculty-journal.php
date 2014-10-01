@@ -2,6 +2,30 @@
 
 header('Content-Type: application/javascript');
 
+require_once(__DIR__ . '/config.inc.php');
+require_once(SMCANVASLIB_PATH . '/include/mysql.inc.php');
+
+if (isset($_REQUEST['user_id'])) {
+	if (is_numeric($_REQUEST['user_id'])) {
+		$userId = $_REQUEST['user_id'];
+	} else {
+		$userId = preg_replace('|.*users/(\d+)/?.*|', '$1', $_REQUEST['user_id']);
+	}
+}
+
+if (!isset($userId) || !strlen($userId)) {
+	exit;
+}
+
+/* get the current user's preferences */
+$response = mysqlQuery("
+	SELECT * FROM `users`
+		WHERE
+			`id` = '" . $userId . "'
+");
+$userPrefs = $response->fetch_assoc();
+$userPrefs['groups'] = unserialize($userPrefs['groups']);
+
 ?>
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true */
 
@@ -48,8 +72,8 @@ function stmarks_facultyJournal() {
 	// if we're looking at a faculty journal page, insert the list of students
 	if (facultyJournalUrl.test(document.location.href)) {
 		stmarks_addFacultyJournalMenu();
-	// if we're looking at the list of students, link to the faculty journal page
-	} else if (document.getElementById('addUsers') && courseUsersUrl.test(document.location.href)) {
+	// if we're looking at the list of students (and we're faculty), link to the faculty journal page
+	} else if (<?= ($userPrefs['role'] == 'faculty' ? 'true' : 'false') ?> && courseUsersUrl.test(document.location.href)) {
 		stmarks_addFacultyJournalButton();
 	}
 }
