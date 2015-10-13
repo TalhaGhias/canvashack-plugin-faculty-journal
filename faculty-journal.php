@@ -40,7 +40,7 @@ function stmarks_addFacultyJournalButton() {
 		var userId = document.getElementsByClassName('StudentEnrollment')[0].id.substr(5);
 		var facultyJournalLink = document.createElement('a');
 		facultyJournalLink.href = '/users/' + userId + '/user_notes?course_id=' + courseId;
-		facultyJournalLink.className = 'btn button-sidebar-wide';
+		facultyJournalLink.className = 'btn button-sidebar-wide btn-danger';
 		facultyJournalLink.innerHTML = 'Faculty Journal';
 		rightSideToolbar.appendChild(facultyJournalLink);
 	// if the right-side toolbar isn't ready yet, try again soon
