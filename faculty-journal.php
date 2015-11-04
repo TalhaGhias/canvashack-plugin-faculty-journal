@@ -60,6 +60,9 @@ function stmarks_addFacultyJournalMenu() {
 		courseMenu.frameBorder = '0';
 		courseMenu.src = '<?= 'https://' . $_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']) ?>/menu.php?course_id=' + courseId + '&user_id=' + userId;
 		contentDiv.insertBefore(courseMenu, contentDiv.firstChild);
+		
+		// make it a lot harder to print and share comments
+		$('h1.page-header').after('<div style="border-radius: 1em; background-color: #fcc; color: #a33; padding: 0.5em 2em; margin-bottom: 2em;"><h4>Confidential</h4><p>These notes are written by faculty specifically for an audience of fellow faculty, with the understanding that observations and feedback are honest, but may not be sufficiently polished to present directly to families. <strong>Please respect this confidentiality by not sharing these comments with students or parents.</strong></p></div>');
 	// if the content area isn't ready yet, try again soon
 	} else {
 		window.setTimeout(stmarks_addFacultyJournalMenu, 25);
