@@ -14,7 +14,7 @@ var canvashack = {
 		if ($('.StudentEnrollment').length > 0) {
 			firstStudentId = $('.StudentEnrollment')[0].id.substr(5);
 		}
-		$(container).append('<a class="btn button-sidebar-wide btn-danger" href="/users/' + firstStudentId + '/user_notes?course_id=' + this.courseId.exec(document.location.href)[1] + '&course_name=' + encodeURI($('#breadcrumbs li.home').next().find('span').text()) +'"><i class="icon-discussion" role="presentation"></i> Faculty Journal</a>');
+		$(container).append('<a class="btn button-sidebar-wide" href="/users/' + firstStudentId + '/user_notes?course_id=' + this.courseId.exec(document.location.href)[1] + '&course_name=' + encodeURI($('#breadcrumbs li.home').next().find('span').text()) +'"><i class="icon-discussion" role="presentation"></i> Faculty Journal</a>');
 	},
 
 	addMenu: function() {

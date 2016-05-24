@@ -17,15 +17,15 @@
 				<include>
 					<page>
 						<type>regex</type>
-						<pattern>%courses/\d+%</pattern>
+						<pattern>%courses/\d+$%</pattern>
 					</page>
                     <page>
                         <type>regex</type>
-                        <pattern>%courses/\d+/users%</pattern>
+                        <pattern>%courses/\d+/users$%</pattern>
                     </page>
                     <page>
                         <type>regex</type>
-                        <pattern>%users/\d+/user_notes\?course_id=\d+%</pattern>
+                        <pattern>%users/\d+/user_notes\?%</pattern>
                     </page>
 				</include>
 			</pages>
