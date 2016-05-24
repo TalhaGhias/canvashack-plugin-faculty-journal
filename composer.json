@@ -3,7 +3,11 @@
     "description": "Allow teachers to browse the faculty journal by class",
     "type": "canvashack-plugin",
     "require": {
-        "smtech/canvaspest": "^1.1"
+        "smtech/canvaspest": "^1.1",
+        "battis/simplecache": "^1.0",
+        "battis/appmetadata": "^1.0",
+        "battis/configxml": "^1.0",
+        "battis/bootstrapsmarty": "^1.0"
     },
     "license": "GPL-3.0",
     "authors": [

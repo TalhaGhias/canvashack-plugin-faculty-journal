@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<canvashack>
+	<name>Faculty Journal</name>
+	<id>faculty_journal</id>
+	<abstract>Some modifications to make the Faculty Journal manageable at the course, rather than individual, level</abstract>
+	<authors>
+		<author>
+			<name>Seth Battis</name>
+			<email>SethBattis@stmarksschool.org</email>
+		</author>
+	</authors>
+	<components>
+		<javascript>js/faculty-journal.js.php</javascript>
+		<css>css/faculty-journal.css</css>
+		<canvas>
+			<pages>
+				<include>
+					<page>
+						<type>regex</type>
+						<pattern>%courses/\d+%</pattern>
+					</page>
+                    <page>
+                        <type>regex</type>
+                        <pattern>%courses/\d+/users%</pattern>
+                    </page>
+                    <page>
+                        <type>regex</type>
+                        <pattern>%users/\d+/user_notes\?course_id=\d+%</pattern>
+                    </page>
+				</include>
+			</pages>
+			<dom>
+				<bundle>
+					<event>load</event>
+					<action>loadInterface()</action>
+					<selector>body</selector>
+				</bundle>
+			</dom>
+		</canvas>
+	</components>
+</canvashack>

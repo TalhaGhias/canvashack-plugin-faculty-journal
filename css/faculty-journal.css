@@ -1,0 +1,21 @@
+iframe#canvashack-faculty-journal {
+	overflow: hidden;
+	border: none;
+	height: 55px;
+	width: 100%;
+}
+
+#canvashack-faculty-journal-confidential {
+	margin-bottom: 2em;
+}
+
+@media print {
+	#user_note_list {
+		display: none !important;
+	}
+}
+
+#block-clipboard {
+	position: absolute;
+	left: -99999px;
+}
