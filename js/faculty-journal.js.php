@@ -57,14 +57,14 @@ var canvashack = {
 			this.addMenu();
 			
 		/* or are we on the Users page of the course, needing a button? */
-		} else if (this.courseUsersUrl.test(document.location.href) && $('#right-side a[href*="/teacher_activity/"]').length > 0) {
+		} else if (this.courseUsersUrl.test(document.location.href) && (ENV.current_user_roles.indexOf('teacher') > 0 || ENV.current_user_roles.indexOf('admin') > 0)) {
 			var self = this;
 			$('#content .roster .StudentEnrollment').ready(function() {
-				self.addButton('#right-side .rs-margin-lr.rs-margin-top');
+				self.addButton('.ic-Action-header__Primary');
 			});
 			
 		/* or are we on the home page of the course, needing a button? */
-		} else if (this.courseHomeUrl.test(document.location.href) && $('#course_show_secondary .course-options a[href$="/analytics"]').length > 0) {
+		} else if (this.courseHomeUrl.test(document.location.href) && (ENV.current_user_roles.indexOf('teacher') > 0 || ENV.current_user_roles.indexOf('admin') > 0)) {
 			this.addButton('#course_show_secondary .course-options');
 		}
 	}
