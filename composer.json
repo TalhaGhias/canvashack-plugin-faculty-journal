@@ -7,7 +7,7 @@
         "battis/simplecache": "^1.0",
         "battis/appmetadata": "^1.0",
         "battis/configxml": "^1.0",
-        "battis/bootstrapsmarty": "^1.0"
+	"battis/bootstrapsmarty": "*"
     },
     "license": "GPL-3.0",
     "authors": [
