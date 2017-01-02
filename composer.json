@@ -1,6 +1,6 @@
 {
     "name": "canvashack/plugin-faculty-journal",
-    "description": "Allow teachers to browse the faculty journal by class",
+    "description": "Allow teachers to browse the faculty journal by course and section",
     "type": "canvashack-plugin",
     "require": {
         "smtech/canvaspest": "^1.1",

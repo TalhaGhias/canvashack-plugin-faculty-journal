@@ -2,7 +2,7 @@
 <canvashack>
 	<name>Faculty Journal</name>
 	<id>faculty_journal</id>
-	<abstract>Some modifications to make the Faculty Journal manageable at the course, rather than individual, level</abstract>
+	<abstract>Allow teachers to browse the faculty journal by course and section</abstract>
 	<authors>
 		<author>
 			<name>Seth Battis</name>
