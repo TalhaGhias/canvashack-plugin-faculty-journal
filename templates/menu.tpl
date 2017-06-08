@@ -2,7 +2,7 @@
 
 {block name="header"}{/block}
 
-{block name="messages"}{/block}						
+{block name="messages"}{/block}
 
 {block name="content"}
 
@@ -36,9 +36,9 @@
 
 	<script src="js/menu.js"></script>
 	<script type="text/javascript">
-		
-		faculty_journal_menu.init('{$pluginUrl}', '{$canvasInstance}', '{$course}', '{$name}', '{$user}');
-			
+
+		faculty_journal_menu.init("{$pluginUrl}", "{$canvasInstance}", "{$course}", "{$name|escape:'html'}", "{$user}");
+
 	</script>
 
 {/block}
