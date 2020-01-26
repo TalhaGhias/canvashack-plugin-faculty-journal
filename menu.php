@@ -7,7 +7,7 @@ use Battis\BootstrapSmarty\BootstrapSmarty;
 $smarty = BootstrapSmarty::getSmarty();
 $smarty->addTemplateDir(__DIR__ . '/templates');
 $smarty->addStylesheet('css/menu.css', basename(__FILE__));
-
+echo 'here';
 $smarty->assign([
     'canvasInstance' => $_SESSION['canvasInstanceUrl'],
     'pluginUrl' => $pluginMetadata['PLUGIN_URL'],
